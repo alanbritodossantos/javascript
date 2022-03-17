@@ -11,9 +11,15 @@ var pacientes = document.querySelectorAll(".paciente");//pega os paciente que es
 var tabela = document.querySelector("table");
 
 tabela.addEventListener("dblclick",function(event){
-    var alvoEvento = event.target;
-    var paiDoAlvo = alvoEvento.parentNode; //remova o pai desse event
-    paiDoAlvo.remove();
+    // var alvoEvento = event.target;
+    // var paiDoAlvo = alvoEvento.parentNode; //remova o pai desse event
+    // paiDoAlvo.remove();
+
+    event.target.parentNode.classList.add("fadeOut");
+
+    setTimeout(function() {
+        event.target.parentNode.remove();
+    }, 500);
 });
 
 
